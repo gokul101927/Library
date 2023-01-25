@@ -1,0 +1,159 @@
+body {
+    font-family: "Poppins";
+    background-color: #f0eef1;
+}
+
+.header {
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white;
+}
+
+.header-container {
+    display: flex;
+    width: 1200px;
+    margin: 0 120px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 45px 0;
+    flex-direction: column;
+}
+
+.add-btn {
+    border: none;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    text-shadow: 2px 2px rgb(0 0 0 / 10%);
+}
+
+.add-btn:hover {
+    filter: brightness(90%);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.add-book-form {
+    z-index: 1;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    padding: 20px;
+    background: #f0eef1;
+    border-radius: 15px;
+    justify-content: space-between;
+    width: 300px;
+    top: 15%;
+    left: 40%;
+    text-align: center;
+}
+
+.add-book-form > * {
+    padding: 10px;
+}
+
+.add-book-form > h3 {
+    text-shadow: 2px 2px rgb(0 0 0 / 10%);
+}
+
+.add-book-form > input {
+    margin: 10px 0;
+    border-radius: 15px;
+    border: none;
+}
+
+.add-book-form > input:focus {
+    outline: none;
+}
+
+.btn-green {
+    background-color: #9fff9c !important;
+    border: 2px solid #9fff9c !important;
+}
+
+.btn-red {
+    background-color: #ff9c9c !important;
+    border: 2px solid #ff9c9c !important;
+}
+
+.btn { 
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    border: 2px solid #f0eef1;
+    background-color: #f0eef1;
+    font-weight: 600;
+}
+
+.books-grid {
+    display: grid;
+    width: 1200px;
+    margin: 20px 120px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.book-card {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 20px;
+    gap: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    line-height: 1.2;
+    text-align: center;
+    width: 371px;
+    font-weight: 500;
+}
+
+.book-card > * {
+    text-shadow: 2px 2px rgb(0 0 0 / 10%);
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px 50px;
+}
+
+.btn-group > button {
+    padding: 10px;
+}
+
+.btn:hover {
+    filter: brightness(95%);
+}
+
+.modal.active {
+    display: block;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+  
+.overlay.active {
+    display: block;
+}
