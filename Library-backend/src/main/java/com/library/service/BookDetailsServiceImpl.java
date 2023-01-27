@@ -30,7 +30,7 @@ public class BookDetailsServiceImpl implements IBookDetailsService {
     }
 
     @Override
-    public BookDetails findBookById(String id) {
+    public BookDetails findBookById(Long id) {
         Optional<BookDetails> optionalBook = bookDetailsRepository.findById(id);
 
         if (optionalBook.isEmpty()) {
@@ -41,7 +41,7 @@ public class BookDetailsServiceImpl implements IBookDetailsService {
     }
 
     @Override
-    public void deleteBookById(String id) {
+    public void deleteBookById(Long id) {
         if (bookDetailsRepository.existsById(id)) {
             bookDetailsRepository.deleteById(id);
         } else {

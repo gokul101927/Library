@@ -15,18 +15,13 @@ import java.util.Objects;
 public class BookDetails {
 
     @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    private String id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
 
     private String title;
 
     private String author;
     private int pages;
-
-    @OneToOne
-    @JoinColumn(name = "id")
-    private Book book;
 
     public BookDetails(String title, String author, int pages) {
         this.title = title;

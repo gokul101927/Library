@@ -1,5 +1,6 @@
 package com.library;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.library.model.BookDetails;
 import com.library.repository.BookDetailsRepository;
 import com.library.service.BookDetailsServiceImpl;
@@ -17,15 +18,20 @@ public class LibraryApplication {
 		SpringApplication.run(LibraryApplication.class, args);
 	}
 
+//	@Bean
+//	public CommandLineRunner initDatabase(BookDetailsRepository bookDetailsRepository, BookDetailsServiceImpl bookService) {
+//		return args -> {
+//			BookDetails bookDetails1 = new BookDetails("PS", "Kalki", 1202, true);
+//			bookDetailsRepository.save(bookDetails1);
+//			bookDetailsRepository.save(new BookDetails("PS-2", "Kalki", 1651, false));
+//			log.info("Sample database initialized");
+//			log.info(String.valueOf(bookService.findBookById(bookDetails1.getId())));
+//		};
+//	}
+
 	@Bean
-	public CommandLineRunner initDatabase(BookDetailsRepository bookDetailsRepository, BookDetailsServiceImpl bookService) {
-		return args -> {
-			BookDetails bookDetails1 = new BookDetails("PS", "Kalki", 1202, true);
-			bookDetailsRepository.save(bookDetails1);
-			bookDetailsRepository.save(new BookDetails("PS-2", "Kalki", 1651, false));
-			log.info("Sample database initialized");
-			log.info(String.valueOf(bookService.findBookById(bookDetails1.getId())));
-		};
+	public ObjectMapper getObjectMapper() {
+		return new ObjectMapper();
 	}
 
 }

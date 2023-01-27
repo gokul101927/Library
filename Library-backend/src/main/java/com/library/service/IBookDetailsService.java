@@ -10,7 +10,7 @@ public interface IBookDetailsService {
 
     List<BookDetails> findAllBook();
 
-    BookDetails findBookById(String id);
+    BookDetails findBookById(Long id);
 
-    void deleteBookById(String id);
+    void deleteBookById(Long id);
 }

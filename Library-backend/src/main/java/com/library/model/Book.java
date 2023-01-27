@@ -15,9 +15,8 @@ import java.util.Objects;
 @Entity
 public class Book {
     @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    private String id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
 
     private String fileName;
 
@@ -28,6 +27,10 @@ public class Book {
     @Lob
     @Column(name = "thumbnailImage", length = 1000)
     private byte[] thumbnailImage;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "detailsId", referencedColumnName = "id")
+    private BookDetails bookDetails;
 
     public Book(String fileName, byte[] bookFile, byte[] thumbnailImage) {
         this.fileName = fileName;

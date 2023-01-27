@@ -1,4 +1,4 @@
 package com.library.model;
 
-public record BookResponse(String filename, String BookUri) {
+public record BookResponse(Long id, Long detailsId, String filename, String BookUri, String thumbnailUri) {
 }

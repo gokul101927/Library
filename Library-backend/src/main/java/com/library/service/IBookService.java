@@ -1,19 +1,22 @@
 package com.library.service;
 
 import com.library.model.Book;
+import com.library.model.BookDTO;
+import com.library.model.BookDetails;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 public interface IBookService {
 
-    Book saveBook(MultipartFile file);
+    BookDTO saveBook(MultipartFile file, BookDetails bookDetails);
 
-    List<Book> getAll();
+    BookDTO getBookById(Long id);
+    List<BookDTO> getAll();
 
-    Book getBookById(String id);
-
-    void deleteBookById(String id);
+    void deleteBookById(Long id);
 
     void deleteAll();
+
 }
