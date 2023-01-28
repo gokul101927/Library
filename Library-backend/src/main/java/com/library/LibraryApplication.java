@@ -1,9 +1,6 @@
 package com.library;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.library.model.BookDetails;
-import com.library.repository.BookDetailsRepository;
-import com.library.service.BookDetailsServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

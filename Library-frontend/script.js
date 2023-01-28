@@ -52,6 +52,13 @@ let removeBtn = document.querySelectorAll(".remove-btn");
 let readBtn = document.querySelectorAll(".read-btn");
 
 let booksGrid = document.querySelector(".books-grid");
+const actualBtn = document.getElementById('actual-btn');
+
+const fileChosen = document.getElementById('file-chosen');
+
+actualBtn.addEventListener('change', function(){
+  fileChosen.textContent = this.files[0].name
+})
 
 const addBook = (e) => {
     e.preventDefault()
@@ -125,25 +132,21 @@ const resetBooksGrid = () => {
 
 const createBookCard = (book) => {
     const bookCard = document.createElement('div')
-    const title = document.createElement('p')
-    const author = document.createElement('p')
-    const pages = document.createElement('p')
+    const image = document.createElement('img')
+    const titleAndAuthor = document.createElement('p')
     const buttonGroup = document.createElement('div')
-    const readBtn = document.createElement('button')
+    const downloadBtn = document.createElement('button')
     const removeBtn = document.createElement('button')
   
     bookCard.classList.add('book-card')
     buttonGroup.classList.add('btn-group')
-    readBtn.classList.add('btn')
-    readBtn.classList.add('read-btn')
+    downloadBtn.classList.add('btn')
+    downloadBtn.classList.add('read-btn')
     removeBtn.classList.add('btn')
     removeBtn.classList.add('remove-btn')
-    readBtn.onclick = toggleRead
     removeBtn.onclick = removeBook
   
-    title.textContent = `"${book.title}"`
-    author.textContent = book.author
-    pages.textContent = `${book.pages} pages`
+    titleAndAuthor.textContent = `"${book.title}" -${book.author}`
     removeBtn.textContent = 'Remove'
   
     if (book.isRead) {
